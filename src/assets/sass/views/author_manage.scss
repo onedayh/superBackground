@@ -1,0 +1,96 @@
+#AuthorManage{
+    .author{
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0;
+        width: 642px;
+        &:after{
+            content: '';
+            @include wh(1px, 1000px);
+            @include bgColor($borderColor);
+            left: 390px;
+            top: 0;
+            position: absolute;
+        }
+        .el-form-item__content{
+            @include border($borderColor);
+            overflow: hidden;
+            .first-tree{
+                width: 250px;
+                float: left;
+            }
+            .label{
+                padding-left: 40px;
+                position: relative;
+                @include hl(26px, 26px);
+                cursor: default;
+                .check{
+                    transition: all .5s;
+                    position: absolute;
+                    @include wh(26px, 26px);
+                    background-image: url('../images/unchecked.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 18px 18px;
+                    left: 14px;
+                    top: 0;
+                    cursor: pointer;
+                    z-index: 10;
+                    &:hover{
+                        background-image: url('../images/unchecked_hover.png');
+                    }
+                    &.checked{
+                        background-image: url('../images/checked.png');
+                        &:hover{
+                            background-image: url('../images/checked.png');
+                        }
+                    }
+                }
+                &:hover{
+                    @include bgColor(#f5f7fa)
+                }
+                &.active{
+                    @include bgColor(#f0f7ff);
+                    &:hover{
+                        @include bgColor(#f0f7ff)
+                    }
+                }
+                .el-tree-node__expand-icon{
+                    padding: 6px;
+                    @include sc(12px, #c0c4cc);
+                    position: absolute;
+                    left: 0;
+                    top: 1px;
+                }
+            }
+            .sub-tree{
+                .label{
+                    padding-left: 70px;
+                    .check{
+                        left: 44px;
+                    }
+                }
+            }
+            .third-tree{
+                float: left;
+                width: 250px;
+            }
+        }
+    }
+    .info{
+        padding: 4px 0 0 140px;
+        @include hl(22px, 1);
+        @include sc(12px, #f56c6c)
+    }
+    .el-dialog{
+
+        .el-input, .el-textarea{
+            width: 502px;
+        }
+        .el-form-item__error{
+            top: 100%;
+            left: 0;
+        }
+    }
+
+}

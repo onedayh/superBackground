@@ -1,0 +1,12 @@
+#Headers{
+    @include wh(100%, 60px);
+    @include borderBottom($headerBorderColor);
+    position: fixed;
+    left: 220px;
+    top: 0;
+    z-index: 9;
+    padding-left: 30px;
+    line-height: 59px;
+    @include sc(20px, $titleColor);
+    @include bgColor($white)
+}

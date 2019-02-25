@@ -1,0 +1,26 @@
+#Filters{
+    .my-btn{
+        width: 100px;
+    }
+    .f-title{
+        padding: 10px 30px;
+        line-height: 34px;
+        color: $titleColor;
+    }
+    .el-form{
+        padding: 30px 30px 0;
+        @include borderRadius(4px);
+        @include border($borderColor);
+        @include bgColor($white);
+        .el-input{
+            min-width: 120px;
+        }
+        .el-date-editor{
+            width: 100%;
+            min-width: 352px;
+        }
+        .el-range-editor.el-input__inner{
+            padding-right: 5px;
+        }
+    }
+}

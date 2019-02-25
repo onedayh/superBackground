@@ -1,0 +1,57 @@
+//宽高
+@mixin wh($width, $height){
+    width: $width;
+    height: $height
+}
+
+//字体大小，颜色
+@mixin sc($size, $color){
+    font-size: $size;
+    color: $color
+}
+
+//高，行高
+@mixin hl($height, $line){
+    height: $height;
+    line-height: $line
+}
+
+// 背景颜色
+@mixin bgColor($color){
+    background-color: $color
+}
+
+// 单行溢出省略
+@mixin textOneFlow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+// 双行溢出省略
+@mixin textTwoFlow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+// 圆角
+@mixin borderRadius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius
+}
+
+//边框
+@mixin border($color) {
+    border: 1px solid $color
+}
+
+//下边框
+@mixin borderBottom($color) {
+    border-bottom: 1px solid $color
+}

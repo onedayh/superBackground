@@ -1,0 +1,76 @@
+#Sidebars{
+    @include wh(220px, 100%);
+    @include bgColor($sideBarBgColor);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    padding: 35px 15px 0;
+    .logo{
+        text-align: center;
+        cursor: pointer;
+        img{
+            @include wh(64px, 64px);
+            @include borderRadius(6px)
+        }
+        p{
+            @include sc(16px, $white);
+            line-height: 20px;
+            padding: 10px;
+        }
+    }
+    .el-menu{
+        .el-submenu{
+            &.is-opened{
+                background-color: hsla(0,0%,100%,.1)!important;
+                .el-menu-item{
+                    background-color: hsla(0,0%,100%,.1)!important;
+                }
+                .el-submenu__title{
+                    background-color: hsla(0,0%,100%,.1)!important;
+                }
+            }
+            .el-menu-item{
+                padding: 0 0 0 54px!important;
+            }
+            .el-submenu__title{
+                @include hl(46px, 46px)
+            }
+        }
+        .el-submenu__icon-arrow{
+            color: #fff;
+        }
+    }
+    .el-dropdown{
+        width: 100%;
+    }
+    .s-wrap{
+        @include wh(100%, 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+    }
+    &.bug{
+        z-index: 9999;
+    }
+
+    .form-div{
+        .for-item{
+            &:last-child{
+                input{
+                    padding-right: 100px;
+                }
+            }
+        }
+        .code{
+            cursor: pointer;
+            position: absolute;
+            left: 158px;
+            top: 8px;
+        }
+    }
+    .el-dialog{
+        width: 600px;
+    }
+}

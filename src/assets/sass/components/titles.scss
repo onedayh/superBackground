@@ -1,0 +1,20 @@
+#Titles{
+    @include hl(54px, 54px);
+    @include sc(16px, $titleColor);
+    @include border($borderColor);
+    padding-left: 30px;
+    margin-bottom: 15px;
+    @include borderRadius(4px);
+    @include bgColor($white);
+    span{
+        color: $arrowColor;
+        cursor: pointer;
+        &:hover{
+            color: $themeColor;
+        }
+    }
+    &.has-child{
+        @include borderRadius(4px 4px 0 0);
+        margin-bottom: 0;
+    }
+}

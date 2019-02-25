@@ -1,0 +1,163 @@
+//reset
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+input, select,button, textarea{
+    outline: none;
+    font-size: 14px
+}
+textarea{
+    resize: none
+}
+ul, ol, li{
+    list-style: none
+}
+i{
+    font-style: normal
+}
+a{
+    text-decoration: none;
+    &:hover{
+        text-decoration: underline
+    }
+}
+img{
+    border: none
+}
+table{
+    border-spacing: 0;
+    table-layout: fixed
+}
+input::-ms-clear, input::-ms-reveal{
+    display: none
+}
+input::-webkit-input-placeholder{
+    color: $placeholderColor
+}
+input::-moz-placeholder{
+    color: $placeholderColor
+}
+input:-moz-placeholder{
+    color: $placeholderColor
+}
+input:-ms-input-placeholder{
+    color: $placeholderColor
+}
+/*在谷歌下移除input[number]的上下箭头*/
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button{
+    -webkit-appearance: none !important;
+    margin: 0;
+}
+/*在firefox下移除input[number]的上下箭头*/
+input[type="number"]{-moz-appearance:textfield;}
+
+//base
+html, body, #App, #Index{
+    height: 100%;
+    min-height: 100%;
+    min-width: 1200px
+}
+body{
+    @include sc(14px, $textColor);
+    font-family: "Microsoft YaHei";
+    word-wrap: break-word;
+    @include bgColor($bgColor);
+    overflow-x: hidden
+}
+
+.form-div{
+    @include bgColor($white);
+    padding: 30px;
+    @include border($borderColor);
+    border-top: none;
+    @include borderRadius(0 0 4px 4px);
+    .el-input{
+        width: 250px;
+    }
+    .el-textarea{
+        width: 500px;
+        textarea{
+            height: 100px;
+            resize: none;
+            font-family: "Microsoft YaHei", arial;
+        }
+    }
+    .submit{
+        position: fixed;
+        @include wh(100%, 60px);
+        @include bgColor($white);
+        margin-bottom: 0;
+        border-top: 1px solid $headerBorderColor;
+        bottom: 0;
+        left: 150px;
+        padding-top: 10px;
+        .my-btn{
+            width: 100px;
+        }
+    }
+}
+.other-btn{
+    @include bgColor($white);
+    color: $themeColor;
+    &:hover{
+        @include bgColor(#ecf5ff);
+        color: $themeColor;
+    }
+    &:focus{
+        @include bgColor($white);
+        color: $themeColor;
+    }
+}
+
+.el-dialog{
+    width: 700px;
+    margin-top: 100px!important;
+    .el-dialog__body{
+        padding: 30px 20px 0;
+    }
+    .form-div{
+        border: none;
+        padding: 0;
+        .el-textarea{
+            width: 250px;
+            textarea{
+                height: 60px;
+            }
+        }
+        .sets-chabox{
+            .el-checkbox{
+                display: block;
+                width: 160px;
+                margin-left: 0;
+            }
+        }
+    }
+}
+.el-loading-spinner .path{
+    stroke: $themeColor
+}
+.el-loading-spinner .el-loading-text{
+    color: $themeColor;
+}
+.fade-enter-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+
+.for-item{
+    position: relative;
+    .tips{
+        @include sc(12px, $placeholderColor);
+        position: absolute;
+        left: 0;
+        top: 100%;
+        @include hl(16px, 1);
+        padding-top: 4px;
+    }
+}
+

@@ -1,0 +1,89 @@
+#Tables{
+    position: relative;
+    .head{
+        padding: 30px 30px 10px;
+        line-height: 34px;
+        color: #333;
+        overflow: hidden;
+        p{
+            float: left;
+        }
+        .el-button{
+            float: right;
+            margin-left: 20px;
+        }
+    }
+    .el-table{
+        &::before{
+            height: 0;
+        }
+        @include border($borderColor);
+        @include borderRadius(4px);
+        padding: 0 15px;
+        thead{
+            color: $textColor;
+            th{
+                font-weight: normal;
+            }
+        }
+    }
+    .el-pagination{
+        position: absolute;
+        padding: 20px 30px;
+        text-align: right;
+        right: 20px;
+        bottom: 0;
+        .el-pager li {
+            min-width: 28px;
+            @include hl(28px, 26px);
+            padding: 0 10px;
+            @include border($borderColor);
+            @include sc(12px, $textColor);
+            @include borderRadius(4px);
+            text-align: center;
+            font-weight: normal;
+            margin: 0 5px;
+            &.active{
+                color: $white;
+                @include border($themeColor);
+                @include bgColor($themeColor);
+            }
+        }
+        button {
+            .el-icon{
+                margin-top: -2px;
+                &:before{
+                    @include sc(18px, $textColor);
+                    font-weight: normal
+                }
+            }
+            &:disabled .el-icon:before {
+                color: #e5e5e5
+            }
+        }
+    }
+    .el-table__fixed{
+        left: 15px;
+        box-shadow: none;
+        &::before{
+            height: 0;
+        }
+    }
+    .el-table__fixed-right{
+        box-shadow: none;
+        right: 15px;
+        &::before{
+            height: 0;
+        }
+    }
+    .feedback{
+        @include hl(60px, 60px);
+        position: absolute;
+        top: 124px;
+        width: 100%;
+        text-align: center;
+        span{
+            @include sc(14px, #909399)
+        }
+    }
+}

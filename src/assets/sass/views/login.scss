@@ -1,0 +1,65 @@
+#Login{
+    height: 100%;
+    overflow: hidden;
+    background: $bgColor url(../images/login_bg.png) no-repeat left top/contain;
+    .login-wrap{
+        width: 440px;
+        text-align: center;
+        @include bgColor($white);
+        @include borderRadius(8px);
+        -webkit-box-shadow: 0 0 10px 1px rgba(39, 45, 61, .3);
+        box-shadow: 0 0 10px 1px rgba(39, 45, 61, .3);
+        margin: 210px auto 0;
+        .logo{
+            width: 350px;
+            display: inline-block;
+            padding-top: 30px;
+            text-align: center;
+            @include hl(68px, 38px);
+            @include sc(24px, $titleColor);
+            img, span{
+                float: left;
+            }
+            img{
+                @include wh(38px, 38px);
+                margin-right: 5px;
+            }
+        }
+        .login-box{
+            padding: 60px 30px;
+            .el-input__inner{
+                height: 39px;
+                padding-bottom: 5px;
+                @include borderRadius(0);
+                border-width:  0 0 1px 0;
+            }
+            .my-btn{
+                width: 100%;
+                @include hl(50px, 50px);
+                margin-top: 30px;
+                font-size: 18px;
+                @include borderRadius(6px);
+                &.is-disabled{
+                    @include bgColor(#eee)
+                }
+            }
+            .el-form-item__error{
+                top: 100%;
+                left: 15px;
+            }
+            .ver-code{
+                position: relative;
+                input{
+                    padding-right: 120px;
+                }
+                img{
+                    position: absolute;
+                    right: 15px;
+                    bottom: 12px;
+                    z-index: 2;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
